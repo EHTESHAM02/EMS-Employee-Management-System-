@@ -1,0 +1,22 @@
+package demoSpring.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EmailService {
+     
+	@Autowired
+	private JavaMailSender javaMailSender;
+	
+	public void sendEmail(String to, String sub, String body) {
+		SimpleMailMessage content = new SimpleMailMessage();
+		content.setTo(to);
+		content.setSubject(sub);
+		content.setText(body);
+		javaMailSender.send(content);
+	}
+
+}
