@@ -45,10 +45,7 @@ public class EmployeeService {
 		
 	}
 
-	public void updateEmployee(long id) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	public Employee getEmployee(long id) {
 		Employee employee = employeeRepo.findById(id).get();
